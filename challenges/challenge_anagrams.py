@@ -5,10 +5,10 @@ def is_anagram(first_string, second_string):
     second_string = second_string.lower()
     second_string = merge_sort_string(list(second_string))
 
-    anagram = first_string == second_string and (
+    it_is_anagram = first_string == second_string and (
         first_string != "" and second_string != ""
     )
-    return (first_string, second_string, anagram)
+    return (first_string, second_string, it_is_anagram)
 
 
 def merge_sort_string(string, start=0, end=None):
