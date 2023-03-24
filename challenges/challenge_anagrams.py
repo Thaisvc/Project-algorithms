@@ -1,9 +1,9 @@
 def is_anagram(first_string, second_string):
     # https://www.datacamp.com/tutorial/case-conversion-python
     first_string = first_string.lower()
-    first_string = merge_sort_string(list(first_string))
+    first_string = merge_sort(list(first_string))
     second_string = second_string.lower()
-    second_string = merge_sort_string(list(second_string))
+    second_string = merge_sort(list(second_string))
 
     it_is_anagram = first_string == second_string and (
         first_string != "" and second_string != ""
@@ -11,14 +11,14 @@ def is_anagram(first_string, second_string):
     return (first_string, second_string, it_is_anagram)
 
 
-def merge_sort_string(string, start=0, end=None):
+def merge_sort(string, start=0, end=None):
     if end is None:
         end = len(string)
 
     if end - start > 1:  # se não reduzi o suficiente, continua
         mid = (start + end) // 2   # encontrando o meio
-        merge_sort_string(string, start, mid)  # dividindo as listas
-        merge_sort_string(string, mid, end)
+        merge_sort(string, start, mid)  # dividindo as listas
+        merge_sort(string, mid, end)
         string = merge(string, start, mid, end)  # unindo as listas
 
     return "".join(string)
