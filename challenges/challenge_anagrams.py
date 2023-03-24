@@ -28,21 +28,21 @@ def merge(string, start, mid, end):
     left = string[start:mid]  # indexando a lista da esquerda
     right = string[mid:end]  # indexando a lista da direita
 
-    left_index = 0
-    right_index = 0  # as duas listas começarão do início
+    left = 0
+    right = 0  # as duas listas começarão do início
 
     for index_general in range(start, end):  # curse dia 3. bloco-4
-        if left_index >= len(left):
-            string[index_general] = right[right_index]
-            right_index += 1
-        elif right_index >= len(right):
-            string[index_general] = left[left_index]
-            left_index += 1
-        elif left[left_index] < right[right_index]:
-            string[index_general] = left[left_index]
-            left_index += 1
+        if left >= len(left):
+            string[index_general] = right[right]
+            right += 1
+        elif right >= len(right):
+            string[index_general] = left[left]
+            left += 1
+        elif left[left] < right[right]:
+            string[index_general] = left[left]
+            left += 1
         else:
-            string[index_general] = right[right_index]
-            right_index += 1
+            string[index_general] = right[right]
+            right += 1
 
     return string
