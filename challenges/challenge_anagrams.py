@@ -28,7 +28,8 @@ def merge(string, start, mid, end):
     left = string[start:mid]  # indexando a lista da esquerda
     right = string[mid:end]  # indexando a lista da direita
 
-    left_index, right_index = 0, 0  # as duas listas começarão do início
+    left_index = 0
+    right_index = 0  # as duas listas começarão do início
 
     for index_general in range(start, end):  # curse dia 3. bloco-4
         if left_index >= len(left):
